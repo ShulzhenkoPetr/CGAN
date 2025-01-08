@@ -1,0 +1,16 @@
+img_channels: 1
+img_size: 28
+nbr_classes: 10
+
+gen_z_fcs: [100, 200]
+gen_y_fcs: [10, 200]
+gen_j_fcs: [400, 784]
+
+dis_z_fcs: [100, 200]
+dis_y_fcs: [10, 200]
+dis_j_fcs: [400, 784, 200, 1]
+
+dropout_rate: 0.2
+
+
+
