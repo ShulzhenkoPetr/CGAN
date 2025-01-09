@@ -4,6 +4,7 @@ import torchvision
 from torchvision import datasets, transforms
 from torch.utils.data import DataLoader
 
+
 def get_mnist_loaders(config: Dict) -> Tuple[DataLoader]:
 
     root_path = '../data/'

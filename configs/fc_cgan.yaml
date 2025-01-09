@@ -1,16 +1,25 @@
+exp_name: 'test'
+
+seed: 42
+device: 'cpu'
 img_channels: 1
 img_size: 28
-nbr_classes: 10
+num_classes: 10
+size_train_set: 1.0
+z_dim: 100
 
-gen_z_fcs: [100, 200]
-gen_y_fcs: [10, 200]
-gen_j_fcs: [400, 784]
+gen_z_fcs: [100, 200, 512]
+gen_y_fcs: [10, 200, 512]
+gen_j_fcs: [1024, 1200, 784]
 
-dis_z_fcs: [100, 200]
+dis_z_fcs: [784, 200]
 dis_y_fcs: [10, 200]
 dis_j_fcs: [400, 784, 200, 1]
 
 dropout_rate: 0.2
-
-
-
+lr: 0.1
+weight_decay: 0.01
+num_epochs: 100
+batch_size: 16
+transform_train: True
+workers: 8

@@ -18,7 +18,7 @@ class FCBlock(nn.Module):
             self.activation = nn.Sigmoid()
         else:
             self.activation = nn.ReLU()
-        self.dropout = nn.Dropout1d(dropout_rate) if dropout_rate != 0 else nn.Identity()
+        self.dropout = nn.Dropout(dropout_rate) if dropout_rate != 0 else nn.Identity()
 
     def forward(self, x):
         x = self.fc(x)
