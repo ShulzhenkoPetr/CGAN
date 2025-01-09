@@ -17,7 +17,7 @@ class FCBlock(nn.Module):
         elif activation_type == 'sigmoid':
             self.activation = nn.Sigmoid()
         else:
-            self.activation = nn.ReLU()
+            self.activation = nn.LeakyReLU()
         self.dropout = nn.Dropout(dropout_rate) if dropout_rate != 0 else nn.Identity()
 
     def forward(self, x):

@@ -23,8 +23,8 @@ def train(config):
     G_model = FCGenerator(config).to(config.device)
     D_model = FCDiscriminator(config).to(config.device)
     criterion = torch.nn.BCELoss() 
-    optimizer_G = torch.optim.Adam(G_model.parameters(), lr=config.lr, weight_decay=config.weight_decay)
-    optimizer_D = torch.optim.Adam(D_model.parameters(), lr=config.lr, weight_decay=config.weight_decay)
+    optimizer_G = torch.optim.Adam(G_model.parameters(), lr=config.lr_G, weight_decay=config.weight_decay)
+    optimizer_D = torch.optim.Adam(D_model.parameters(), lr=config.lr_D, weight_decay=config.weight_decay)
     scheduler_G = torch.optim.lr_scheduler.StepLR(optimizer_G, step_size=30, gamma=0.1)
     scheduler_D = torch.optim.lr_scheduler.StepLR(optimizer_D, step_size=30, gamma=0.1)
 
@@ -119,7 +119,5 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     config = load_config(args.path2config)
-
-    # gen, disc = setup_model(config)
 
     train(config)
